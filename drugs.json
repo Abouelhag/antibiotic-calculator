@@ -1,0 +1,65 @@
+{
+    "amoxicillin": {
+        "generic": "Amoxicillin",
+        "brands": ["Amoxil", "Trimox"],
+        "pregnancy_category": "B",
+        "lactation_safe": true,
+        "dosing": {
+            "adult": {
+                "oral": "500–875 mg q12h or 250–500 mg q8h",
+                "iv": "1 g q8h (severe)"
+            },
+            "pediatric_weight_based": {
+                "min_mg_per_kg_per_day": 20,
+                "max_mg_per_kg_per_day": 45,
+                "max_daily_mg": 3000,
+                "interval": "divided q8–12h"
+            }
+        },
+        "renal_adjustment": {
+            "crcl_lt_10": "Extended interval to q24h",
+            "crcl_10_30": "q12h"
+        },
+        "hepatic_adjustment": "No adjustment"
+    },
+    "ciprofloxacin": {
+        "generic": "Ciprofloxacin",
+        "brands": ["Cipro"],
+        "pregnancy_category": "C",
+        "lactation_safe": false,
+        "dosing": {
+            "adult": {
+                "oral": "500–750 mg q12h",
+                "iv": "400 mg q12h"
+            }
+        },
+        "renal_adjustment": {
+            "crcl_lt_30": "250–500 mg q12h",
+            "crcl_30_50": "500 mg q12h"
+        },
+        "hepatic_adjustment": "No adjustment",
+        "pediatric_note": "Avoid <18y"
+    },
+    "metronidazole": {
+        "generic": "Metronidazole",
+        "brands": ["Flagyl"],
+        "pregnancy_category": "B",
+        "lactation_safe": false,
+        "dosing": {
+            "adult": {
+                "oral": "500 mg q8h or 750 mg q8h",
+                "iv": "500 mg q8h"
+            },
+            "pediatric_weight_based": {
+                "min_mg_per_kg_per_day": 15,
+                "max_mg_per_kg_per_day": 35,
+                "max_daily_mg": 4000,
+                "interval": "divided q8h"
+            }
+        },
+        "renal_adjustment": {
+            "crcl_lt_10": "250 mg q8h"
+        },
+        "hepatic_adjustment": "Severe liver disease: reduce dose by 50%"
+    }
+}
