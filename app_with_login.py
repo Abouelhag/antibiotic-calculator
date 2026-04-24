@@ -1,4 +1,4 @@
-# app_with_login.py - Complete antibiotic calculator with freemium & PayPal auto-upgrade
+# app_with_login.py - Complete antibiotic calculator with manual PayPal & admin upgrade
 import streamlit as st
 import json
 from db import create_user, authenticate_user, upgrade_to_premium
@@ -58,47 +58,12 @@ def login_signup_page():
                     st.error("User already exists. Try a different email.")
 
 def upgrade_section():
-    """Shows a PayPal button that automatically upgrades the user after payment."""
+    """Shows a simple PayPal link (no webhook). You receive email, then upgrade manually via admin panel."""
     st.markdown("---")
     st.header("✨ Upgrade to Premium")
     st.write("Get access to **ALL antibiotics** and advanced features for a **one-time payment of $1.99 USD**.")
-    st.markdown("---")
-
-    # PayPal button HTML - Replace placeholders with your actual IDs/URLs
-    paypal_button_html = f"""
-    <div id="paypal-button-container"></div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AyPj-MciLZIFgXtWZo08NvSWb3AZAi0dy2dTsGdht3hgIvqAN4sWGd98&currency=USD"></script>
-    <script>
-        paypal.Buttons({{
-            createOrder: function(data, actions) {{
-                return actions.order.create({{
-                    purchase_units: [{{
-                        amount: {{
-                            value: '1.99'
-                        }}
-                    }}]
-                }});
-            }},
-            onApprove: function(data, actions) {{
-                return actions.order.capture().then(function(details) {{
-                    fetch('https://antibiotic-webhook.onrender.com/webhook', {{
-                        method: 'POST',
-                        headers: {{
-                            'Content-Type': 'application/json',
-                        }},
-                        body: JSON.stringify({{
-                            orderID: data.orderID,
-                            email: '{st.session_state['user_email']}'
-                        }})
-                    }});
-                    alert('Payment successful! Your account will be upgraded.');
-                    window.location.reload();
-                }});
-            }}
-        }}).render('#paypal-button-container');
-    </script>
-    """
-    st.components.v1.html(paypal_button_html, height=150)
+    st.markdown("[👉 Click here to pay with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=drabouelhag5@gmail.com&item_name=Ricos%20Biology%20Journal%20-%20Premium%20Upgrade&amount=1.99&currency_code=USD)")
+    st.caption("After payment, we will upgrade your account within 24 hours. Contact support@ricosbiology.net if urgent.")
 
 def display_premium_content():
     """Full antibiotic calculator – premium users see everything."""
@@ -243,6 +208,20 @@ def main():
             st.rerun()
         st.markdown("---")
         st.caption("Ricos Biology Journal\n[https://ricosbiology.net](https://ricosbiology.net)")
+
+        # ------------- ADMIN PANEL -------------
+        ADMIN_EMAIL = "drabouelhag5@gmail.com"   # <-- Your admin email (the one you log in with)
+        if st.session_state['user_email'] == ADMIN_EMAIL:
+            st.markdown("---")
+            st.subheader("🔐 Admin Panel")
+            user_to_upgrade = st.text_input("User email to upgrade (premium)")
+            if st.button("Upgrade to Premium"):
+                if user_to_upgrade:
+                    upgrade_to_premium(user_to_upgrade)
+                    st.success(f"✅ Upgraded {user_to_upgrade} to premium!")
+                else:
+                    st.error("Please enter an email address.")
+        # --------------------------------------
 
     st.title("💊 Antibiotic Dose Calculator")
 
