@@ -1,65 +1,1048 @@
 {
-    "amoxicillin": {
-        "generic": "Amoxicillin",
-        "brands": ["Amoxil", "Trimox"],
-        "pregnancy_category": "B",
-        "lactation_safe": true,
-        "dosing": {
-            "adult": {
-                "oral": "500–875 mg q12h or 250–500 mg q8h",
-                "iv": "1 g q8h (severe)"
-            },
-            "pediatric_weight_based": {
-                "min_mg_per_kg_per_day": 20,
-                "max_mg_per_kg_per_day": 45,
-                "max_daily_mg": 3000,
-                "interval": "divided q8–12h"
-            }
-        },
-        "renal_adjustment": {
-            "crcl_lt_10": "Extended interval to q24h",
-            "crcl_10_30": "q12h"
-        },
-        "hepatic_adjustment": "No adjustment"
+  "amoxicillin": {
+    "generic": "Amoxicillin",
+    "brands": ["Amoxil", "Trimox"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "500–875 mg q12h or 250–500 mg q8h",
+        "iv": "1 g q8h (severe)"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 20,
+        "max_mg_per_kg_per_day": 45,
+        "max_daily_mg": 3000,
+        "interval": "divided q8–12h"
+      }
     },
-    "ciprofloxacin": {
-        "generic": "Ciprofloxacin",
-        "brands": ["Cipro"],
-        "pregnancy_category": "C",
-        "lactation_safe": false,
-        "dosing": {
-            "adult": {
-                "oral": "500–750 mg q12h",
-                "iv": "400 mg q12h"
-            }
-        },
-        "renal_adjustment": {
-            "crcl_lt_30": "250–500 mg q12h",
-            "crcl_30_50": "500 mg q12h"
-        },
-        "hepatic_adjustment": "No adjustment",
-        "pediatric_note": "Avoid <18y"
+    "renal_adjustment": {
+      "crcl_lt_10": "Extended interval to q24h",
+      "crcl_10_30": "q12h"
     },
-    "metronidazole": {
-        "generic": "Metronidazole",
-        "brands": ["Flagyl"],
-        "pregnancy_category": "B",
-        "lactation_safe": false,
-        "dosing": {
-            "adult": {
-                "oral": "500 mg q8h or 750 mg q8h",
-                "iv": "500 mg q8h"
-            },
-            "pediatric_weight_based": {
-                "min_mg_per_kg_per_day": 15,
-                "max_mg_per_kg_per_day": 35,
-                "max_daily_mg": 4000,
-                "interval": "divided q8h"
-            }
-        },
-        "renal_adjustment": {
-            "crcl_lt_10": "250 mg q8h"
-        },
-        "hepatic_adjustment": "Severe liver disease: reduce dose by 50%"
-    }
+    "hepatic_adjustment": "No adjustment"
+  },
+  "amoxicillin_clavulanate": {
+    "generic": "Amoxicillin-Clavulanate",
+    "brands": ["Augmentin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "875/125 mg q12h or 500/125 mg q8h",
+        "iv": "1.2 g q8h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 45,
+        "max_daily_mg": 3000,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "q24h",
+      "crcl_10_30": "q12h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ampicillin": {
+    "generic": "Ampicillin",
+    "brands": ["Principen"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q6h",
+        "iv": "1–2 g q4–6h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 50,
+        "max_mg_per_kg_per_day": 100,
+        "max_daily_mg": 12000,
+        "interval": "divided q6h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "q12–24h",
+      "crcl_10_30": "q8–12h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "piperacillin_tazobactam": {
+    "generic": "Piperacillin-Tazobactam",
+    "brands": ["Zosyn"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "3.375 g q6h or 4.5 g q8h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_20": "2.25 g q8h",
+      "crcl_20_40": "3.375 g q8h",
+      "crcl_40_60": "3.375 g q6h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ticarcillin_clavulanate": {
+    "generic": "Ticarcillin-Clavulanate",
+    "brands": ["Timentin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "3.1 g q4–6h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: 2 g q8h; CrCl <10: 2 g q12h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cephalexin": {
+    "generic": "Cephalexin",
+    "brands": ["Keflex"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q6h or 500 mg q12h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 25,
+        "max_mg_per_kg_per_day": 100,
+        "max_daily_mg": 4000,
+        "interval": "divided q6–12h"
+      }
+    },
+    "renal_adjustment": "CrCl <10: q12h; CrCl 10–30: q8–12h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefadroxil": {
+    "generic": "Cefadroxil",
+    "brands": ["Duricef"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "500–1000 mg q12–24h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 30,
+        "max_daily_mg": 2000,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: q24–48h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefuroxime": {
+    "generic": "Cefuroxime",
+    "brands": ["Zinacef", "Ceftin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q12h",
+        "iv": "750–1500 mg q8h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 20,
+        "max_mg_per_kg_per_day": 30,
+        "max_daily_mg": 1000,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: q12–24h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefixime": {
+    "generic": "Cefixime",
+    "brands": ["Suprax"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "400 mg q24h or 200 mg q12h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 8,
+        "max_daily_mg": 400,
+        "interval": "divided q12–24h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: 200 mg q24h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefdinir": {
+    "generic": "Cefdinir",
+    "brands": ["Omnicef"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "300 mg q12h or 600 mg q24h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 14,
+        "max_daily_mg": 600,
+        "interval": "divided q12–24h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: 300 mg q24h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefpodoxime": {
+    "generic": "Cefpodoxime",
+    "brands": ["Vantin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "100–400 mg q12h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 10,
+        "max_daily_mg": 400,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: q24h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefprozil": {
+    "generic": "Cefprozil",
+    "brands": ["Cefzil"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q12h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 15,
+        "max_daily_mg": 1000,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: reduce dose",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ceftriaxone": {
+    "generic": "Ceftriaxone",
+    "brands": ["Rocephin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "1–2 g q24h",
+        "im": "1–2 g q24h"
+      },
+      "pediatric_note": "50–75 mg/kg/day divided q12–24h (max 2 g/day)"
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid in neonates with hyperbilirubinemia"
+  },
+  "ceftazidime": {
+    "generic": "Ceftazidime",
+    "brands": ["Fortaz", "Tazicef"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "1–2 g q8h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "0.5–1 g q24h",
+      "crcl_10_30": "1 g q24h",
+      "crcl_30_50": "1 g q12h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "cefepime": {
+    "generic": "Cefepime",
+    "brands": ["Maxipime"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "1–2 g q8–12h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_30": "0.5–1 g q24h",
+      "crcl_30_60": "1–2 g q24h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ceftaroline": {
+    "generic": "Ceftaroline",
+    "brands": ["Teflaro"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "600 mg q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: 400 mg q12h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "azithromycin": {
+    "generic": "Azithromycin",
+    "brands": ["Zithromax"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "500 mg day1 then 250 mg daily x4 days or 500 mg daily x3 days",
+        "iv": "500 mg daily"
+      },
+      "pediatric_weight_based": {
+        "day1_mg_per_kg": 10,
+        "days2to5_mg_per_kg": 5
+      }
+    },
+    "renal_adjustment": "CrCl <10: use with caution",
+    "hepatic_adjustment": "Caution in severe liver disease"
+  },
+  "clarithromycin": {
+    "generic": "Clarithromycin",
+    "brands": ["Biaxin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q12h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 15,
+        "max_daily_mg": 1000,
+        "interval": "divided q12h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: reduce by 50%",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "erythromycin": {
+    "generic": "Erythromycin",
+    "brands": ["Erythrocin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q6h",
+        "iv": "0.5–1 g q6h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 30,
+        "max_daily_mg": 2000,
+        "interval": "divided q6h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Caution in severe liver disease"
+  },
+  "ciprofloxacin": {
+    "generic": "Ciprofloxacin",
+    "brands": ["Cipro"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "500–750 mg q12h",
+        "iv": "400 mg q12h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_30": "250–500 mg q12h",
+      "crcl_30_50": "500 mg q12h"
+    },
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <18y"
+  },
+  "levofloxacin": {
+    "generic": "Levofloxacin",
+    "brands": ["Levaquin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "500 mg q24h",
+        "iv": "500 mg q24h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_20": "250 mg q24h",
+      "crcl_20_49": "250–500 mg q24h"
+    },
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <18y"
+  },
+  "moxifloxacin": {
+    "generic": "Moxifloxacin",
+    "brands": ["Avelox"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "400 mg q24h",
+        "iv": "400 mg q24h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <18y"
+  },
+  "delafloxacin": {
+    "generic": "Delafloxacin",
+    "brands": ["Baxdela"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "450 mg q12h",
+        "iv": "300 mg q12h"
+      }
+    },
+    "renal_adjustment": "CrCl 15–29: reduce dose",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "doxycycline": {
+    "generic": "Doxycycline",
+    "brands": ["Vibramycin", "Doryx"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "100 mg q12h or 200 mg daily",
+        "iv": "100 mg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Caution in severe impairment",
+    "pediatric_note": "Avoid <8y"
+  },
+  "minocycline": {
+    "generic": "Minocycline",
+    "brands": ["Minocin"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "100 mg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <8y"
+  },
+  "tetracycline": {
+    "generic": "Tetracycline",
+    "brands": ["Sumycin"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "250–500 mg q6h"
+      }
+    },
+    "renal_adjustment": "Avoid if CrCl <30",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <8y"
+  },
+  "gentamicin": {
+    "generic": "Gentamicin",
+    "brands": ["Garamycin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "3–5 mg/kg/day divided q8h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 2.5,
+        "max_mg_per_kg_per_day": 7.5,
+        "interval": "divided q8h",
+        "note": "Monitor levels"
+      }
+    },
+    "renal_adjustment": "Dose based on CrCl and levels",
+    "hepatic_adjustment": "No adjustment",
+    "note": "Requires therapeutic drug monitoring"
+  },
+  "tobramycin": {
+    "generic": "Tobramycin",
+    "brands": ["Nebcin"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "3–5 mg/kg/day divided q8h"
+      }
+    },
+    "renal_adjustment": "Extend interval based on CrCl",
+    "hepatic_adjustment": "No adjustment",
+    "note": "Monitor levels"
+  },
+  "amikacin": {
+    "generic": "Amikacin",
+    "brands": ["Amikin"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "15–20 mg/kg/day divided q8–12h"
+      }
+    },
+    "renal_adjustment": "Extend interval based on CrCl",
+    "hepatic_adjustment": "No adjustment",
+    "note": "Monitor levels"
+  },
+  "vancomycin": {
+    "generic": "Vancomycin",
+    "brands": ["Vancocin"],
+    "pregnancy_category": "C",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "15–20 mg/kg q8–12h (target trough 10–20)"
+      }
+    },
+    "renal_adjustment": "Dose based on CrCl and levels",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Weight-based, monitor levels"
+  },
+  "teicoplanin": {
+    "generic": "Teicoplanin",
+    "brands": ["Targocid"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "400 mg q12h x3 doses then 400 mg q24h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: q48h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "linezolid": {
+    "generic": "Linezolid",
+    "brands": ["Zyvox"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "600 mg q12h",
+        "iv": "600 mg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "10 mg/kg q8h"
+  },
+  "tedizolid": {
+    "generic": "Tedizolid",
+    "brands": ["Sivextro"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "200 mg q24h",
+        "iv": "200 mg q24h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "metronidazole": {
+    "generic": "Metronidazole",
+    "brands": ["Flagyl"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "500 mg q8h or 750 mg q8h",
+        "iv": "500 mg q8h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 15,
+        "max_mg_per_kg_per_day": 35,
+        "max_daily_mg": 4000,
+        "interval": "divided q8h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "250 mg q8h"
+    },
+    "hepatic_adjustment": "Severe liver disease: reduce dose by 50%"
+  },
+  "tinidazole": {
+    "generic": "Tinidazole",
+    "brands": ["Tindamax"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "2 g single dose or 500 mg q12h x5–10 days"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Caution in severe liver disease"
+  },
+  "clindamycin": {
+    "generic": "Clindamycin",
+    "brands": ["Cleocin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "300–450 mg q6–8h (severe: 600 mg q8h)",
+        "iv": "600–900 mg q8h"
+      },
+      "pediatric_weight_based": {
+        "min_mg_per_kg_per_day": 10,
+        "max_mg_per_kg_per_day": 30,
+        "interval": "divided q6–8h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "trimethoprim_sulfamethoxazole": {
+    "generic": "Trimethoprim-Sulfamethoxazole",
+    "brands": ["Bactrim", "Septra"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "1 DS tab q12h",
+        "iv": "8–10 mg/kg/day (TMP) divided q6–12h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_15": "Avoid",
+      "crcl_15_30": "Half dose"
+    },
+    "hepatic_adjustment": "Caution in severe liver disease",
+    "pediatric_note": "8–12 mg/kg/day (TMP) divided q12h"
+  },
+  "nitrofurantoin": {
+    "generic": "Nitrofurantoin",
+    "brands": ["Macrobid", "Macrodantin"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "100 mg q12h (monohydrate) or 50–100 mg q6h"
+      }
+    },
+    "renal_adjustment": "Contraindicated if CrCl <30 (ineffective)",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "5–7 mg/kg/day divided q6h (avoid <1 month)"
+  },
+  "fosfomycin": {
+    "generic": "Fosfomycin",
+    "brands": ["Monurol"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "3 g single dose (UTI)"
+      }
+    },
+    "renal_adjustment": "CrCl <10: dialysis required",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "rifampin": {
+    "generic": "Rifampin",
+    "brands": ["Rifadin", "Rimactane"],
+    "pregnancy_category": "C",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "600 mg daily (10 mg/kg)",
+        "iv": "600 mg daily"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Severe liver disease: reduce or avoid"
+  },
+  "rifabutin": {
+    "generic": "Rifabutin",
+    "brands": ["Mycobutin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "300 mg daily"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Severe liver disease: reduce dose"
+  },
+  "daptomycin": {
+    "generic": "Daptomycin",
+    "brands": ["Cubicin"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "4–6 mg/kg q24h (6 mg/kg for bacteremia/endocarditis)"
+      }
+    },
+    "renal_adjustment": "CrCl <30: q48h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "colistin": {
+    "generic": "Colistin",
+    "brands": ["Coly-Mycin M"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "Loading 5 mg/kg then 2.5 mg/kg q12h"
+      }
+    },
+    "renal_adjustment": "Dose based on CrCl (q12–48h)",
+    "hepatic_adjustment": "No adjustment",
+    "note": "Nephrotoxic, last resort"
+  },
+  "polymyxin_b": {
+    "generic": "Polymyxin B",
+    "brands": ["Polymyxin B Sulfate"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1.5–2.5 mg/kg/day divided q12h"
+      }
+    },
+    "renal_adjustment": "Dose based on CrCl",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "chloramphenicol": {
+    "generic": "Chloramphenicol",
+    "brands": ["Chloromycetin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "50–100 mg/kg/day divided q6h",
+        "iv": "Same"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Avoid in severe liver disease",
+    "pediatric_note": "Risk of gray baby syndrome; avoid in neonates"
+  },
+  "fidaxomicin": {
+    "generic": "Fidaxomicin",
+    "brands": ["Dificid"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "200 mg q12h x10 days"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Caution in severe impairment"
+  },
+  "methenamine": {
+    "generic": "Methenamine",
+    "brands": ["Hiprex", "Urex"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "1 g q12h"
+      }
+    },
+    "renal_adjustment": "Avoid if CrCl <30",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "meropenem": {
+    "generic": "Meropenem",
+    "brands": ["Merrem"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "1 g q8h (up to 2 g q8h for CNS)"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "500 mg q12h",
+      "crcl_10_30": "500 mg q8–12h",
+      "crcl_30_50": "1 g q12h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ertapenem": {
+    "generic": "Ertapenem",
+    "brands": ["Invanz"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "iv": "1 g q24h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: 500 mg q24h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "imipenem_cilastatin": {
+    "generic": "Imipenem-Cilastatin",
+    "brands": ["Primaxin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "500 mg q6h or 1 g q8h"
+      }
+    },
+    "renal_adjustment": "Dose based on CrCl and weight",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "doripenem": {
+    "generic": "Doripenem",
+    "brands": ["Doribax"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "500 mg q8h"
+      }
+    },
+    "renal_adjustment": {
+      "crcl_lt_10": "250 mg q12h",
+      "crcl_10_30": "250 mg q8h",
+      "crcl_30_50": "500 mg q12h"
+    },
+    "hepatic_adjustment": "No adjustment"
+  },
+  "telavancin": {
+    "generic": "Telavancin",
+    "brands": ["Vibativ"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "10 mg/kg q24h"
+      }
+    },
+    "renal_adjustment": "CrCl 30–50: 7.5 mg/kg q24h; CrCl 10–30: 10 mg/kg q48h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "oritavancin": {
+    "generic": "Oritavancin",
+    "brands": ["Kimyrsa"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1200 mg single dose"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "dalbavancin": {
+    "generic": "Dalbavancin",
+    "brands": ["Dalvance"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1500 mg single dose or 1000 mg then 500 mg one week later"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "tigecycline": {
+    "generic": "Tigecycline",
+    "brands": ["Tygacil"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "100 mg loading then 50 mg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Severe liver disease: 25 mg q12h after loading"
+  },
+  "eravacycline": {
+    "generic": "Eravacycline",
+    "brands": ["Xerava"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1 mg/kg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "Severe liver disease: consider alternative"
+  },
+  "omadacycline": {
+    "generic": "Omadacycline",
+    "brands": ["Nuzyra"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "450 mg q24h x2 days then 300 mg q24h",
+        "iv": "200 mg loading then 100 mg q24h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "sarecycline": {
+    "generic": "Sarecycline",
+    "brands": ["Seysara"],
+    "pregnancy_category": "D",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "100–150 mg q24h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment",
+    "pediatric_note": "Avoid <9y"
+  },
+  "fosfomycin_trometamol": {
+    "generic": "Fosfomycin Trometamol",
+    "brands": ["Monurol"],
+    "pregnancy_category": "B",
+    "lactation_safe": true,
+    "dosing": {
+      "adult": {
+        "oral": "3 g single dose (uncomplicated UTI)"
+      }
+    },
+    "renal_adjustment": "CrCl <10: avoid",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "levonadifloxacin": {
+    "generic": "Levonadifloxacin",
+    "brands": ["Bemfloxacin"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "500 mg q12h"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "sulbactam_durlobactam": {
+    "generic": "Sulbactam-Durlobactam",
+    "brands": ["Xacduro"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1 g sulbactam + 0.5 g durlobactam q6h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: adjust dosing interval",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ceftobiprole": {
+    "generic": "Ceftobiprole",
+    "brands": ["Zevtera"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "500 mg q8h"
+      }
+    },
+    "renal_adjustment": "CrCl <50: adjust dose",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "ceftolozane_tazobactam": {
+    "generic": "Ceftolozane-Tazobactam",
+    "brands": ["Zerbaxa"],
+    "pregnancy_category": "B",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "1.5 g q8h"
+      }
+    },
+    "renal_adjustment": "CrCl 30–50: 750 mg q8h; CrCl 15–29: 375 mg q8h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "plazomicin": {
+    "generic": "Plazomicin",
+    "brands": ["Zemdri"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "iv": "15 mg/kg q24h"
+      }
+    },
+    "renal_adjustment": "CrCl 30–59: 10 mg/kg q24h; CrCl 15–29: 10 mg/kg q48h",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "finafloxacin": {
+    "generic": "Finafloxacin",
+    "brands": ["Xtoro"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "otic": "0.3% solution"
+      }
+    },
+    "renal_adjustment": "Not applicable (topical)",
+    "hepatic_adjustment": "Not applicable"
+  },
+  "nemonoxacin": {
+    "generic": "Nemonoxacin",
+    "brands": ["Nemoxa"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "500 mg q24h"
+      }
+    },
+    "renal_adjustment": "CrCl <30: reduce dose",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "zoliflodacin": {
+    "generic": "Zoliflodacin",
+    "brands": ["ZTx"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "3 g single dose"
+      }
+    },
+    "renal_adjustment": "No adjustment",
+    "hepatic_adjustment": "No adjustment"
+  },
+  "gepotidacin": {
+    "generic": "Gepotidacin",
+    "brands": ["Gep"],
+    "pregnancy_category": "C",
+    "lactation_safe": false,
+    "dosing": {
+      "adult": {
+        "oral": "1.5 g q12h"
+      }
+    },
+    "renal_adjustment": "CrCl 30–59: 1 g q12h; CrCl <30: avoid",
+    "hepatic_adjustment": "No adjustment"
+  }
 }
