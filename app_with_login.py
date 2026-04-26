@@ -210,7 +210,7 @@ def main():
         st.caption("Ricos Biology Journal\n[https://ricosbiology.net](https://ricosbiology.net)")
 
         # ------------- ADMIN PANEL -------------
-        ADMIN_EMAIL = "drabouelhag5@gmail.com"   # <-- Your admin email (the one you log in with)
+        ADMIN_EMAIL = "info@ricosbiology.net"   # <-- Your admin email (the one you log in with)
         if st.session_state['user_email'] == ADMIN_EMAIL:
             st.markdown("---")
             st.subheader("🔐 Admin Panel")
