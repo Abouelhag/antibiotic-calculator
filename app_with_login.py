@@ -4,6 +4,25 @@ import json
 from db import create_user, authenticate_user, upgrade_to_premium
 
 # --------------------------------------------------
+# PWA (Progressive Web App) injection
+# --------------------------------------------------
+st.markdown(
+    """
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#2c7da0">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker registered', reg))
+            .catch(err => console.error('Service Worker error', err));
+        }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
+
+# --------------------------------------------------
 # Load drug database (only used for premium content)
 # --------------------------------------------------
 def load_drugs():
