@@ -1,4 +1,4 @@
-# app.py - Antibiotic Calculator (Fixed PDF encoding & Logo)
+# app.py - Antibiotic Calculator (Logo, Background, PDF fixed)
 import streamlit as st
 import json
 from fpdf import FPDF
@@ -14,9 +14,9 @@ st.set_page_config(
     layout="centered"
 )
 
-# ---------- عرض الشعار إن وُجد ----------
+# ---------- عرض الشعار إن وُجد (logo.jpeg) ----------
 if os.path.exists("logo.jpeg"):
-    st.image("logo.jpeg", width=150)
+    st.image("logo.jpeg", width=180)
 else:
     st.write("")  # فراغ بسيط
 
@@ -61,7 +61,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ---------- دالة تنظيف النصوص من الأحرف غير اللاتينية ----------
+# ---------- دالة تنظيف النصوص من الأحرف غير اللاتينية (لـ PDF) ----------
 def sanitize_text(text):
     if not isinstance(text, str):
         text = str(text)
@@ -75,7 +75,6 @@ def sanitize_text(text):
     }
     for bad, good in replacements.items():
         text = text.replace(bad, good)
-    # إزالة أي أحرف أخرى غير قابلة للترميز latin-1
     return text.encode('latin-1', errors='ignore').decode('latin-1')
 
 # ---------- تحميل قاعدة البيانات ----------
