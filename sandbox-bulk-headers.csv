@@ -1,0 +1,5 @@
+country_code,account_type,primary_email_alias,password,first_name,last_name,ppBalance,addBank,ccType,payment_card
+US,BUSINESS,test-5@business.example.com,J0nhD03!,John,Doe,9.99,Y,VISA,PAYPAL
+US,BUSINESS,test-2@business.example.com,J0nhD03!,John,Doe,400,N,VISA,DISCOVER
+US,BUSINESS,test-3@business.example.com,J0nhD03!,John,Doe,1.99,Y,AMEX,PAYPAL
+US,BUSINESS,test-4@business.example.com,J0nhD03!,John,Doe,200,N,MASTERCARD,PAYPAL
