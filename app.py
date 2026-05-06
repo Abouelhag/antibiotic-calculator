@@ -1,53 +1,40 @@
-# app.py - Antibiotic Calculator (with Logo & Background Image)
+# app.py - Antibiotic Calculator (Fixed PDF encoding & Logo)
 import streamlit as st
 import json
 from fpdf import FPDF
 import tempfile
 import base64
 from datetime import datetime
-from PIL import Image
 import os
 
-# ------------------- إعداد الصفحة -------------------
+# ---------- إعداد الصفحة ----------
 st.set_page_config(
     page_title="Antibiotic Dose Calculator",
     page_icon="💊",
     layout="centered"
 )
 
-# دالة تحويل الصورة إلى base64 للخلفية
-def get_base64_image(img_path):
-    if os.path.exists(img_path):
-        with open(img_path, "rb") as f:
-            return base64.b64encode(f.read()).decode()
-    return ""
-
-# ------------------- عرض الشعار -------------------
+# ---------- عرض الشعار إن وُجد ----------
 if os.path.exists("logo.jpeg"):
-    col1, col2, col3 = st.columns([1,2,1])
-    with col2:
-        st.image(Image.open("logo.jpeg"), width=180)
+    st.image("logo.jpeg", width=150)
 else:
     st.write("")  # فراغ بسيط
 
-# ------------------- خلفية الصورة -------------------
-bg_image = get_base64_image("background.jpg")
-if bg_image:
-    background_css = f"""
+# ---------- خلفية متدرجة (تعمل دائماً) ----------
+st.markdown(
+    """
     <style>
-    .stApp {{
-        background-image: url("data:image/jpeg;base64,{bg_image}");
-        background-size: cover;
+    .stApp {
+        background: linear-gradient(145deg, #caf0f8 0%, #90e0ef 100%);
         background-attachment: fixed;
-        background-position: center;
-    }}
-    div[data-testid="stSidebar"] {{
+    }
+    div[data-testid="stSidebar"] {
         background: rgba(255,255,255,0.85);
         border-radius: 16px;
         margin: 10px;
         padding: 10px;
-    }}
-    .stButton > button {{
+    }
+    .stButton > button {
         background-color: #0077b6;
         color: white;
         border-radius: 30px;
@@ -56,69 +43,47 @@ if bg_image:
         font-size: 16px;
         border: none;
         transition: 0.3s;
-    }}
-    .stButton > button:hover {{
+    }
+    .stButton > button:hover {
         background-color: #023e8a;
         transform: scale(1.02);
-    }}
-    h1, h2, h3 {{
+    }
+    h1, h2, h3 {
         color: #03045e;
-    }}
-    .stSelectbox, .stNumberInput, .stRadio > div {{
+    }
+    .stSelectbox, .stNumberInput, .stRadio > div {
         background-color: rgba(255,255,255,0.7);
         border-radius: 12px;
         padding: 4px;
-    }}
+    }
     </style>
-    """
-    st.markdown(background_css, unsafe_allow_html=True)
-else:
-    # خلفية تدرج لوني احتياطية إذا لم توجد الصورة
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background: linear-gradient(145deg, #caf0f8 0%, #90e0ef 100%);
-            background-attachment: fixed;
-        }
-        div[data-testid="stSidebar"] {
-            background: rgba(255,255,255,0.85);
-            border-radius: 16px;
-            margin: 10px;
-            padding: 10px;
-        }
-        .stButton > button {
-            background-color: #0077b6;
-            color: white;
-            border-radius: 30px;
-            padding: 10px 24px;
-            font-weight: bold;
-            font-size: 16px;
-            border: none;
-            transition: 0.3s;
-        }
-        .stButton > button:hover {
-            background-color: #023e8a;
-            transform: scale(1.02);
-        }
-        h1, h2, h3 {
-            color: #03045e;
-        }
-        .stSelectbox, .stNumberInput, .stRadio > div {
-            background-color: rgba(255,255,255,0.7);
-            border-radius: 12px;
-            padding: 4px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    """,
+    unsafe_allow_html=True
+)
 
-# ------------------- باقي الكود (تحميل الأدوية والدوال) -------------------
+# ---------- دالة تنظيف النصوص من الأحرف غير اللاتينية ----------
+def sanitize_text(text):
+    if not isinstance(text, str):
+        text = str(text)
+    replacements = {
+        "–": "-",
+        "—": "-",
+        "’": "'",
+        "“": '"',
+        "”": '"',
+        "…": "...",
+    }
+    for bad, good in replacements.items():
+        text = text.replace(bad, good)
+    # إزالة أي أحرف أخرى غير قابلة للترميز latin-1
+    return text.encode('latin-1', errors='ignore').decode('latin-1')
+
+# ---------- تحميل قاعدة البيانات ----------
 def load_drugs():
     with open("drugs.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
+# ---------- إنشاء PDF مع تنظيف النصوص ----------
 def create_prescription_pdf(patient_info, drug_name, drug_details, dose_text, crcl_value):
     pdf = FPDF()
     pdf.add_page()
@@ -126,22 +91,23 @@ def create_prescription_pdf(patient_info, drug_name, drug_details, dose_text, cr
     pdf.cell(200, 12, txt="Antibiotic Prescription", ln=True, align="C")
     pdf.ln(10)
     pdf.set_font("Arial", "", 10)
-    pdf.cell(200, 6, txt=f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}", ln=True, align="R")
+    pdf.cell(200, 6, txt=sanitize_text(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}"), ln=True, align="R")
     pdf.ln(6)
     pdf.set_font("Arial", "B", 12)
     pdf.cell(200, 8, txt="Patient Information:", ln=True)
     pdf.set_font("Arial", "", 11)
     for key, val in patient_info.items():
-        pdf.cell(200, 7, txt=f"{key}: {val}", ln=True)
+        pdf.cell(200, 7, txt=sanitize_text(f"{key}: {val}"), ln=True)
     pdf.ln(5)
     pdf.set_font("Arial", "B", 12)
     pdf.cell(200, 8, txt="Prescribed Medication:", ln=True)
     pdf.set_font("Arial", "", 11)
-    pdf.multi_cell(0, 7, txt=f"Drug: {drug_name}\nGeneric: {drug_details.get('generic', 'N/A')}\nDosage: {dose_text}")
+    med_text = sanitize_text(f"Drug: {drug_name}\nGeneric: {drug_details.get('generic', 'N/A')}\nDosage: {dose_text}")
+    pdf.multi_cell(0, 7, txt=med_text)
     if crcl_value:
         pdf.ln(3)
         pdf.set_font("Arial", "I", 10)
-        pdf.cell(200, 6, txt=f"Creatinine Clearance (CrCl): {crcl_value:.1f} mL/min", ln=True)
+        pdf.cell(200, 6, txt=sanitize_text(f"Creatinine Clearance (CrCl): {crcl_value:.1f} mL/min"), ln=True)
     pdf.ln(8)
     pdf.cell(200, 8, txt="Doctor Signature: _________________", ln=True)
     pdf.cell(200, 6, txt="(This is an electronic prescription for reference only)", ln=True)
@@ -149,6 +115,7 @@ def create_prescription_pdf(patient_info, drug_name, drug_details, dose_text, cr
     pdf.output(temp.name)
     return temp.name
 
+# ---------- المحتوى الرئيسي ----------
 def main_calculator():
     st.title("💊 Antibiotic Dose Calculator")
     st.markdown("### Evidence-based dosing for adults and pediatrics")
